@@ -1,0 +1,12 @@
+// This file is part of the imaging2 class library.
+//
+// University of Innsbruck, Infmath Imaging, 2009.
+// http://infmath.uibk.ac.at
+//
+// All rights reserved.
+
+
+/** \defgroup xml XML Module
+
+    The XML module includes two classes for stream based input and output of XML files. The module is extensible. I.e. the user can provide XML handler classes for her custom objects and read and write this objects. Internally, it is based on <a href="http://xmlsoft.org">libxml2</a>.
+*/

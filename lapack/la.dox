@@ -1,0 +1,14 @@
+// This file is part of the imaging2 class library.
+//
+// University of Innsbruck, Infmath Imaging, 2009.
+// http://infmath.uibk.ac.at
+//
+// All rights reserved.
+
+
+/** \defgroup la Linear Algebra Module 
+
+    The linear algebra module provides functions for ublas::matrix and ublas::vector which are not in uBLAS. Most of the functions pass its parameters to the appropriate functions of LAPACK. Instead of being a simple wrapper of LAPACK, the functions in this module usually perform higher level task than a single LAPACK function.
+    
+    Note that this module provides solver for dense systems of linear equations but not for sparse systems. Sparse solvers are collected in the \ref solver "linear solver module".
+*/

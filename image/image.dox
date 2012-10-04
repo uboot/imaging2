@@ -1,0 +1,12 @@
+// This file is part of the imaging2 class library.
+//
+// University of Innsbruck, Infmath Imaging, 2009.
+// http://infmath.uibk.ac.at
+//
+// All rights reserved.
+
+
+/** \defgroup image Image Module
+
+    The image module provides a template class for <em>n</em>-dimensional image data and specialized members to read and write 2-dimensional image data. Furthermore, the concept of \em accessor classes allows to apply simple transformations to images on the fly or efficiently access channels of vector valued image data. For 2D image data, several functions of the <a href="http://www.imagemagick.org">ImageMagick</a> library are interfaced.
+*/

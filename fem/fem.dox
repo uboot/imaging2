@@ -1,0 +1,63 @@
+// This file is part of the imaging2 class library.
+//
+// University of Innsbruck, Infmath Imaging, 2009.
+// http://infmath.uibk.ac.at
+//
+// All rights reserved.
+
+
+/** \defgroup fem Finite Element Module 
+
+\section introduction Introduction
+
+The Finite Element Module implements data structurs and methods to assembly the stiffness matrix and the force vector for a given equation and a given finite element grid. The classes of this module can be roughly divided into \em problem-centric and \em implementation-centric classes. In addition, there some utilities classes for frequent FE-related tasks.
+
+The problem-centric classes provide data structure and functionality which are specific to a given FE problem and can only be partially provided by the imaging2 library. These cover
+- the geometry of the FE-grid and
+- the equation.
+
+The implementation-centric classes provide the part of FE-code which does not depend on the actual geometry and equation. An implementation of implementation-centric classes is provided by the \em imaging2 library but it can be extended by the user. It consists of 
+- (boundary) elements and transformations to the reference elements,
+- shape functions on elements,
+- assembly routines.
+
+The central idea of the FEM module is to be generic. I.e. the implementation is independent of the problem dimension and the actual type of elements and shape functions wherever possible. This is done by parametrizing all this information in classes called <em>FEM traits</em>. These trait classes encode all information regarding the dimension of the FE problem, the type of elements and shape functions used and the integrators for the numeric evaluation of the shape functions over the elements.
+An example of FEM traits for the linear approximation of a 1D FE problem is given below:
+
+\code
+  class fem_1d_types
+  {
+  public:
+    static const std::size_t data_dimension = 1;
+
+    typedef Interval1dTransform transform_t;
+    typedef Linear1dShapeFunction shape_function_t;
+    typedef IntervalIntegrator<2> integrator_t;
+    typedef PointIntegrator boundary_integrator_t;
+  };
+\endcode
+
+Classes which are designed to be independent of the actual choice of the above parameters are implemented as templates which will be instantiated for specific FEM traits. E.g. the code of the class Assembler does refer to the dimension of the FE problem as \c fem_types::data_dimension only. The compiler substitutes this expression, when Assembler is instantiated with specified FEM traits, e.g. \c Assembler<fem_1d_types>.
+
+For a given FE problem the user first selects the right FEM traits class (e.g. \c fem_2d_square_types for a problem on a 2D image with square elements) and instantiates all components she needs for the FE computation with this trait class. This is shown in the following code example:
+\code
+  img::Grid<img::fem_2d_square_types> grid;
+  // construct grid...
+  
+  SomeEquation<img::fem_2d_square_types> equation;
+  // provide data (i.e. boundary data, right hand side) to the equation...
+  
+  img::Assembler<img::fem_2d_square_types>
+  img::ublas::compressed_matrix<img::float_t> stiffness_matrix;
+  img::ublas::vector<img::float_t> force_vector;
+  
+  assembler.assemble(equation, grid, stiffness_matrix, force_vector);
+  
+  // solve the system of linear equations
+\endcode
+
+This example also illustrates the differentiation into problem-centric and implementation-centric classes we introduced above. Although a complete data structure for the FE grid is provided, the actual construction of the grid depends on the geometry of the problem and has to be done by the user (although she can use helper functions provided by \em imaging2). Even more manual interaction is required for the equation. The user has to provide a class implementing the equation she wants to solve, and is in addition responsible for providing the equation with the data of the specific problem to solve. Both tasks are clearly problem-centric.
+
+Instead, the class \c Assembler and its member \c assemble() is provided by the \em imaging2 library and can be used without modification for any choice of FEM traits. This class is implementation-centric.
+
+*/

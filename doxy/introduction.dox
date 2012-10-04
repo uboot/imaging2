@@ -1,0 +1,69 @@
+// This file is part of the imaging2 class library.
+//
+// University of Innsbruck, Infmath Imaging, 2009.
+// http://infmath.uibk.ac.at
+//
+// All rights reserved.
+
+
+/**
+\mainpage The imaging2 class library
+
+\image html figures/illustration.jpg
+
+\section intro_sec Introduction
+
+This class library should provide an object-oriented implementation of basic mathematical objects and functions used in image processing. The goal is to provide a common code base, so that new code can quickly be created from an existing foundation. Furthermore the standardization of interfaces shall faciliate the sharing of existing code. Wrapping third-party code in \em imaging2 compatible interfaces makes them accessible to all users of the library. We also try to benefit from the features of C++ as much as possible.
+
+In the following we give an overview of the capabilities of \em imaging2. A short list of its main features is as follows:
+
+ - Vector and matrix operations completely rely on <a href="http://www.boost.org/libs/numeric/ublas/doc/index.htm">uBLAS</a>, part of <a href="http://www.boost.org">Boost</a>. The uBLAS library is extended by types for fixed size objects (not storing separate size information).
+ - Support for handling <em>n</em>-dimensional image data and <em>n</em>-dimensional shapes.
+ - A generic implementation of finite element assembly routines for FE problems of arbitrary spatial dimension. Custom elements, shape functions and integrators can be provided.
+ - Object oriented, stream based XML input and output.
+ - Wrapper classes for sparse linear solver, nonlinear optimization routines and \em Lapack based linear algebra functions.
+ - Interface (and GLUT implementation) for object oriented, stream based 2D-graphics output.
+ 
+The library is divided in several modules. In the following we give a short overview of the functionality implemented in each of these modules.
+
+\subsection sec_core_module Core Module
+The core module defines the namespace imaging (img) and the types img::float_t and img::size_t. Furthermore it includes \em uBLAS and its \em imaging2 specific extensions. It also provides a standard interface to display log messages, MessageInterface. Several mathematical utility functions are also defined in core.
+
+\subsection sec_fem_module Finite Element Module
+The FEM module provides functions to assemble the stiffness matrix and force vector for user-defined equations. It also includes several functions to construct FE grids. In particular, Image2Grid constructs a FE grid from a given image and transparently transforms multi-dimensional image data to data vectors.
+
+\subsection sec_graphics_module Graphics Module
+The graphics module defines a stream based interface to display 2D objects. The user can provide her own definition of <em>%operator<<()</em> to extend the capabilities of the standard graphics (similar to std::cout). 
+
+\subsection sec_image_module Image Module
+The image module provides a template class for <em>n</em>-dimensional image data and specialized members to read and write 2-dimensional image data. Furthermore, the concept of \em accessor classes allows to apply simple transformations to images on the fly or efficiently access channels of vector valued image data. For 2D image data, several functions of the <a href="http://www.imagemagick.org">ImageMagick</a> library are interfaced.
+
+\subsection sec_la_module Linear Algebra Module
+The linear algebra contains high level linear algebra functions such as eigensystem(), inverse() etc. for \em dense matrices. Internally these functions are based on \em Lapack.
+
+\subsection sec_minimize_module Minimization Module
+The minimization module contains gradient based and non-gradient gradient based optimiziation routines to optimize functions implementing EnergyInterface. It includes e.g. steepest descent, nonlinear conjugated gradients, covariance matrix adaptation (an evolutionary algorithm) etc.
+
+\subsection sec_polytope_module Polytope Module
+The polytope module is mainly a utility module which defines classes for simple polygons and multiply connected polygons with holes. It includes functions to compute the union of polygons and the intersection volume of polygons using third-party code (more should be added).
+
+\subsection sec_segmentation_module Segmentation Module
+The segmentation module is a collection of segmentation energies which are compatible with the minimization module. Currently Mumford-Shah and Snakes are implemented, both with the possibility of statistical regularization.
+
+\subsection sec_shape_module Shape Module
+The shape module defines a common interface for finite dimensional shape manifolds of arbitrary spatial dimension. In addition functions to integrate shapes, i.e. integration of (vector-valued) functions along the shape boundary, are provided. Implemented shapes are circles, B-spline curves and two kinds of M-Reps.
+
+\subsection sec_solver_module Linear Solver Module
+The linear solver module provides solver routines for systems of linear equations defined by \em sparse matrices. Again these functions are not implemented but merely interface existing solvers in <a href="http://rene.ma.utexas.edu/CNA/ITPACK">ITPACK</a> and <a href="http://www.netlib.org/linalg/spooles/spooles.2.2.html">SPOOLES</a>. Currently included are a CG, LU and BiCGStab solver.
+
+\subsection sec_spline_module B-Spline Module
+The B-spline module includes classes for B-spline and periodic B-spline functions. This includes spline functions and curves of arbitrary dimension. The module provides functions to read/write B-splines from/to XML files and to display planar spline curves. It contains utility functions to solve the spline interpolation problem. 
+
+\subsection sec_statistic_module Statistic Module
+The statistics module is a utility module which contains utility functions to compute means and variances. Additionally it includes an implementation of the linear principal component analysis (PCA). 
+
+\subsection sec_xml_module XML Module
+The XML module includes two classes for stream based input and output of XML files. The module is extensible. I.e. the user can provide XML handler classes for her custom objects and read and write this objects. Internally, it is based on <a href="http://xmlsoft.org">libxml2</a>.
+
+<em>Matthias Fuchs, 28/07/08</em>
+*/

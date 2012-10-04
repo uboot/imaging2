@@ -1,0 +1,12 @@
+// This file is part of the imaging2 class library.
+//
+// University of Innsbruck, Infmath Imaging, 2009.
+// http://infmath.uibk.ac.at
+//
+// All rights reserved.
+
+
+/** \defgroup core Core Module 
+
+The core module defines the namespace imaging (img) and the types img::float_t and img::size_t. Furthermore it includes \em uBLAS and its \em imaging2 specific extensions. It also provides a standard interface to display log messages, MessageInterface. Several mathematical utility functions are also defined in core.
+*/

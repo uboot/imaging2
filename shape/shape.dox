@@ -1,0 +1,12 @@
+// This file is part of the imaging2 class library.
+//
+// University of Innsbruck, Infmath Imaging, 2009.
+// http://infmath.uibk.ac.at
+//
+// All rights reserved.
+
+
+/** \defgroup shape Shape Module 
+    
+    The shape module defines a common interface for finite dimensional shape manifolds of arbitrary spatial dimension. In addition functions to integrate shapes, i.e. integration of (vector-valued) functions along the shape boundary, are provided. Implemented shapes are circles, B-spline curves and two kinds of M-Reps.
+*/

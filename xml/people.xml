@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<imaging>
+  <person age="50">Franz</person>
+  <person>Arne</person>
+  
+  <some_float>0.5</some_float>
+  <some_float>1.0</some_float>
+  <some_float>1.5</some_float>
+</imaging>

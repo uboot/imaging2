@@ -1,0 +1,12 @@
+// This file is part of the imaging2 class library.
+//
+// University of Innsbruck, Infmath Imaging, 2009.
+// http://infmath.uibk.ac.at
+//
+// All rights reserved.
+
+
+/** \defgroup polytope Polytope Module 
+
+    The polytope module is mainly a utility module which defines classes for simple polygons and multiply connected polygons with holes. It includes functions to compute the union of polygons and the intersection volume of polygons using third-party code (more should be added).
+*/

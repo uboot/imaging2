@@ -1,0 +1,11 @@
+// This file is part of the imaging2 class library.
+//
+// University of Innsbruck, Infmath Imaging, 2009.
+// http://infmath.uibk.ac.at
+//
+// All rights reserved.
+
+
+/** \defgroup mrep M-Rep Module
+    \ingroup shape 
+*/

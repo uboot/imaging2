@@ -1,0 +1,45 @@
+<imaging>
+  <polygon>
+    <contours>
+      <simple_polygon>
+        <vertex>(-.5, -.5)</vertex>
+        <vertex>(1, -.5)</vertex>
+        <vertex>(1, 1.5)</vertex>
+        <vertex>(-.5, 0.5)</vertex>
+      </simple_polygon>
+    </contours>
+  </polygon>
+  
+  <polygon>
+    <contours>
+      <simple_polygon>
+        <vertex>(0, 0.5)</vertex>
+        <vertex>(1, 0.5)</vertex>
+        <vertex>(2.5, 1.0)</vertex>
+        <vertex>(0, 1)</vertex>
+      </simple_polygon>
+    </contours>
+  </polygon>
+  
+  <polygon>
+    <contours>
+      <simple_polygon>
+        <vertex>(0.5, -.5)</vertex>
+        <vertex>(1, -.5)</vertex>
+        <vertex>(2.5, 1.5)</vertex>
+        <vertex>(2, 1.5)</vertex>
+      </simple_polygon>
+    </contours>
+  </polygon>
+  
+  <polygon>
+    <contours>
+      <simple_polygon>
+        <vertex>(0.5, 1.3)</vertex>
+        <vertex>(2.5, 1.3)</vertex>
+        <vertex>(2.5, 1.4)</vertex>
+        <vertex>(.5, 1.4)</vertex>
+      </simple_polygon>
+    </contours>
+  </polygon>
+</imaging>

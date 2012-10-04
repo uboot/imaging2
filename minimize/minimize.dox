@@ -1,0 +1,12 @@
+// This file is part of the imaging2 class library.
+//
+// University of Innsbruck, Infmath Imaging, 2009.
+// http://infmath.uibk.ac.at
+//
+// All rights reserved.
+
+
+/** \defgroup minimize Minimization Module 
+
+    Provides classes to minimize energy functionals. Depending on the minimization method the energies have to implement EnergyInterface or DifferentiableInterface to be plugged into a minimization routine.
+*/

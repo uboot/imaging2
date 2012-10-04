@@ -1,0 +1,203 @@
+% This file is part of the imaging2 class library.
+%
+% University of Innsbruck, Infmath Imaging, 2009.
+% http://infmath.uibk.ac.at
+%
+% All rights reserved.
+
+
+\documentclass[a4paper,10pt]{article}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\title{ {\bf{HowTo}} \\
+        Install the imaging2 library on a Unix system \\
+        {\small{developed by Matthias Fuchs et al.}}
+      }
+\author{\small{Thomas Fidler}}
+
+\begin{document}
+\maketitle
+
+\section{Agreements}
+This installation guide utilises some programs which are neccessary for the installation process. They can be replaced (except cmake)
+by any suitable equivalent program the user may be more familiar with.
+\begin{itemize}
+    \item   xterm: a simple terminal window; Start: Alt+F2 -[command] xterm \&
+    \item   cmake: a build system, Start: Alt+F2 -[command] ccmake .
+    \item   kwrite: a text editor; Start: Alt+F2 -[command] kwrite \&
+\end{itemize}
+Furthermore, we use some notation:
+\begin{tabbing}
+    home\_folderblaa    \=  blabla \kill
+    home\_folder        \>  home folder of your linux account \\
+    {[shell]}           \>  shell prompt of your system; \\
+                        \>  depending on your system another string than \emph{shell} appears \\
+    {[cmake]}           \>  indicates the user interface of cmake \\
+    {[kwrite]}          \>  indicates the user interface of kwrite \\
+\end{tabbing}
+To get the information about your \emph{home\_folder} open a terminal window and type
+\begin{verbatim}
+    [shell] cd ~
+    [shell] pwd
+\end{verbatim}
+Folders and files names are written in italics in text paragraphs.
+
+Moreover we assume that the following libraries and their header files are installed:
+\begin{itemize}
+ \item Lapack and BLAS
+ \item Boost
+ \item LibXML2
+ \item LibPNG
+ \item ImageMagick and ImageMagick++
+ \item OpenGL and GLUT
+ \item a Fortran compiler (e.g. GCC Fortran)
+\end{itemize}
+These libraries are available as packages for most Linux-distributions. 
+Make sure that you install the library packages and the corresponding developer packages (which include the header files).
+
+Note that it is possible to locally install the imaging2 library on your cluster account.
+You simply have to login on the cluster with the following command:
+\begin{verbatim}
+    [shell] ssh -X username@fw02-c703.uibk.ac.at
+\end{verbatim}
+Then follow the instructions below.
+ 
+
+\section{Installation Guide for Library \emph{Spooles}}
+First download the modified compressed package from the \emph{Infmath} server\footnote{\url{http://infmath.uibk.ac.at/~matthiasf/spooles.tar.gz}}
+and save it local to \emph{home\_folder}. Next, open a terminal window and type in the
+following commands:
+\begin{verbatim}
+    [shell] cd
+    [shell] ls
+    [shell] tar -xzf spooles.tar.gz
+    [shell] cd spooles
+    [shell] make lib
+\end{verbatim}
+In the directory spooles we have to rename the file \emph{spooles.a}:
+\begin{verbatim}
+    [shell] mv spooles.a libspooles.a
+\end{verbatim}
+
+\section{Installation Guide for Library \emph{imaging2}}
+In the next step the files of the imaging2 library have to be downloaded via svn. For that purpose open a new terminal window
+and be sure to be in your \emph{home\_folder}.
+\begin{verbatim}
+    [shell] svn checkout http://infmath.uibk.ac.at:8080/
+            share/code/imaging2/trunk/ imaging2
+\end{verbatim}
+You may be prompted to specify your password.
+Press \emph{Enter} once (without entering a password).
+You will now be asked to provide your user name followed by your password (cf. internal Wiki).
+Afterwards change to the subfolder \emph{imaging2} and start cmake:
+\begin{verbatim}
+    [shell] cd imaging2
+    [shell] ccmake .
+\end{verbatim}
+Now the user interface of cmake appears: just press
+\begin{verbatim}
+    [cmake] press c
+    [cmake] change by arrow down to CMAKE_BUILD_TYPE
+    [cmake] press return
+    [cmake] type "Debug"
+    [cmake] press return
+    [cmake] press c
+    [cmake] press g
+    [cmake] press t
+    [cmake] change by arrow down to CMAKE_C_FLAGS
+    [cmake] press return
+    [cmake] type "-I/home_folder/spooles"
+    [cmake] press return
+    [cmake] change by arrow down to CMAKE_EXE_LINKER_FLAGS
+    [cmake] press return
+    [cmake] type "-L/home_folder/spooles"
+    [cmake] press return
+    [cmake] press c
+    [cmake] press g
+\end{verbatim}
+Now, hope everything works well:
+\begin{verbatim}
+    [shell] make
+\end{verbatim}
+To verify the compilation process we check the following:
+\begin{verbatim}
+    [shell] cd core/ublas/
+    [shell] ./fixed_ublas
+\end{verbatim}
+A list of numbers and vectors should be displayed in the terminal.
+\begin{verbatim}
+    [shell] cd ..
+    [shell] cd ..
+    [shell] cd fem
+    [shell] ./fem
+\end{verbatim}
+The Lenna image and a black square on white background are filtered using diffusion flow, mean curvature flow and total variation flow.
+\begin{verbatim}
+    [shell] cd ..
+    [shell] cd polytope
+    [shell] ./polytope polytope.xml
+\end{verbatim}
+Four intersecting polytopes should be displayed in a window; the union of the polytopes should be coloured.
+\begin{verbatim}
+    [shell] cd ..
+    [shell] cd shape/mrep/
+    [shell] ./mrep mrep.xml
+\end{verbatim}
+A window with two shapes and their corresponding M-Rep model should appear.
+
+\section{Creating Test File}
+In the following we check if the installation process was successful by creating a simple test program which
+includes the library imaging2. First create a new subfolder (i.e. \emph{/home\_folder/seminar}) and open an
+editor (i.e. kedit).
+\begin{verbatim}
+    [shell] cd ~
+    [shell] mkdir seminar
+    [shell] cd seminar
+    [shell] kedit &
+\end{verbatim}
+Type in the following code fragment and save it, i.e. as \emph{seminar.cpp} in \emph{/home\_folder/seminar}.
+\begin{verbatim}
+    [kwrite] #include<core/imaging2.hpp>
+
+             int main(int argc, char * const argv[])
+             {
+                 return 0;
+             }
+\end{verbatim}
+Open another kedit session, type in the following code fragment and save it as \emph{CMakeLists.txt} in
+\emph{/home\_folder/seminar}.
+\begin{verbatim}
+    [kwrite] project(seminar CXX)
+
+             add_executable(seminar seminar.cpp)
+             target_link_libraries(seminar
+                 imaging2)
+\end{verbatim}
+Try to compile the file \emph{seminar.cpp} with the aid of cmake and \emph{CMakeLists.txt}.
+\begin{verbatim}
+    [shell] ccmake .
+    [cmake] press c
+    [cmake] change by arrow down to CMAKE_BUILD_TYPE
+    [cmake] press return
+    [cmake] type "Debug"
+    [cmake] press return
+    [cmake] press c
+    [cmake] press t
+    [cmake] change by arrow down to CMAKE_CXX_FLAGS
+    [cmake] press return
+    [cmake] type "-I/home_folder/imaging2"
+    [cmake] press return
+    [cmake] change by arrow down to CMAKE_EXE_LINKER_FLAGS
+    [cmake] press return
+    [cmake] type "-L/home_folder/imaging2"
+    [cmake] press return
+    [cmake] press c
+    [cmake] press g
+\end{verbatim}
+After telling the compiler where to find the header file \emph{imaging2.hpp} the program should compile successfully and an executable \emph{seminar} will be generated.
+\begin{verbatim}
+    [shell] make
+    [shell] ./seminar
+\end{verbatim}
+\end{document}

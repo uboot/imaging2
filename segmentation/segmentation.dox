@@ -1,0 +1,12 @@
+// This file is part of the imaging2 class library.
+//
+// University of Innsbruck, Infmath Imaging, 2009.
+// http://infmath.uibk.ac.at
+//
+// All rights reserved.
+
+
+/** \defgroup segmentation Segmentation Module 
+
+    The segmentation module is a collection of segmentation energies which are compatible with the minimization module. Currently Mumford-Shah and Snakes are implemented, both with the possibility of statistical regularization.
+*/

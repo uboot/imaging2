@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<imaging>
+  <mrep_model_2d>
+    <position center="(150.0,150.0)" rotation="0.278285"/>
+    <atom r="39.1597" start_atom="0" connection="0"/>
+    <atom r="24.8033" start_atom="0" connection="0"/>
+    <atom r="26.075" start_atom="0" connection="1"/>
+    <atom r="26.075" start_atom="0" connection="2"/>
+    <atom r="28.8173" start_atom="0" connection="3"/>
+    <connection r="73.6672" rotation="0"/>
+    <connection r="91.2829" rotation="1.54597"/>
+    <connection r="73.3798" rotation="3.18541"/>
+    <connection r="99.1489" rotation="4.74835"/>
+  </mrep_model_2d>
+
+  <polygon_model_2d>
+    <position center="(450.0,150.0)" rotation="0.278285"/>
+    <atom r="39.1597" start_atom="0" connection="0"/>
+    <atom r="24.8033" start_atom="0" connection="0"/>
+    <atom r="26.075" start_atom="0" connection="1"/>
+    <atom r="26.075" start_atom="0" connection="2"/>
+    <atom r="28.8173" start_atom="0" connection="3"/>
+    <connection r="73.6672" rotation="0"/>
+    <connection r="91.2829" rotation="1.54597"/>
+    <connection r="73.3798" rotation="3.18541"/>
+    <connection r="99.1489" rotation="4.74835"/>
+  </polygon_model_2d>
+</imaging>

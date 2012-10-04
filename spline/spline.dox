@@ -1,0 +1,12 @@
+// This file is part of the imaging2 class library.
+//
+// University of Innsbruck, Infmath Imaging, 2009.
+// http://infmath.uibk.ac.at
+//
+// All rights reserved.
+
+
+/** \defgroup spline B-Spline Module 
+
+    The B-spline module includes classes for B-spline and periodic B-spline functions. This includes spline functions and curves of arbitrary dimension. The module provides functions to read/write B-splines from/to XML files and to display planar spline curves. It contains utility functions to solve the spline interpolation problem.
+*/

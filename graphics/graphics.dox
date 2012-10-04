@@ -1,0 +1,39 @@
+// This file is part of the imaging2 class library.
+//
+// University of Innsbruck, Infmath Imaging, 2009.
+// http://infmath.uibk.ac.at
+//
+// All rights reserved.
+
+
+/** \defgroup graphics Graphics Module 
+
+    The Graphics Module provides classes for graphics output. The common interface for all output classes is defined in GraphicsInterface. It provides a stream-based interface. Objects can be drawn by passing them to a graphics object by using the operator '<<'. This operator can be overloaded to provide drawing functions for custom classes.
+    
+     Currently only DummyGraphics and OpenGlViewer are available for graphics output. DummyGraphics accepts graphic input but simply ignores it, whereas OpenGlViewer draws it to the screen using GLUT. A class based on QT would be a desirable extension of \em imaging2. 
+    
+    Here is an example on how \em gr can be used:
+  \code
+  #include <graphics/OpenGlViewer.hpp>
+  #include <core/gio.hpp> // graphic support for core objects  
+  
+  using imaging;
+  
+  int main ( int argc, char **argv )
+  {
+    OpenGlViewer::out.init(argc, argv,
+                  ublas::fixed_vector<imaging::float_t, 2>(0.0, 0.0),
+                  ublas::fixed_vector<imaging::float_t, 2> ( 1.0, 1.0 ),
+                  400, 400);
+                  // the graphics output displays the square [0, 1] x [0, 1]
+                  // in a window of size 400 x 400 pixels
+                 
+    ublas::fixed_vector<float_t, 2> a(0.25, 0.25), b(0.75, 0.75);
+    
+    OpenGlViewer::out.line_segment(a, b); // draws a line from a to b
+    OpenGlViewer::out << a << b; // draws a and b; the operator << for fixed, 2-dimensional 
+                       // vectors is declared in <core/gio.hpp>
+    OpenGlViewer::out << GraphicsInterface::flush; // flush the graphics stream
+  }
+  \endcode
+*/
