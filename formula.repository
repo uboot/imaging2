@@ -1,0 +1,100 @@
+\form#0:\[ \left( \begin{array}{cc} \cos \alpha & -\sin \alpha \\ \sin \alpha & \cos \alpha \end{array} \right)\,. \]
+\form#1:\[ (r, \alpha) \mapsto (r \cos\alpha, r\sin\alpha) \]
+\form#2:\[ \frac{u - u^0}\delta = \nabla \cdot (a \nabla u)\,. \]
+\form#3:$u$
+\form#4:$u^0$
+\form#5:$a$
+\form#6:$\delta > 0$
+\form#7:$\delta$
+\form#8:\[ \vec F(\vec u) = \vec f\,, \]
+\form#9:$\vec F$
+\form#10:$\vec u$
+\form#11:\[ F^k\big((u^\ell)_\ell\big) = f^k\,, \]
+\form#12:$k$
+\form#13:$\ell$
+\form#14:$(\psi_i)_i$
+\form#15:$\psi_i$
+\form#16:$\vec \psi_i^k$
+\form#17:\[ \big(\vec \psi_i^k\big)^m = \delta_{km} \psi_i\,. \]
+\form#18:\[ u^\ell = \sum_i u_i^\ell \psi_i\,. \]
+\form#19:\[ \int_\Omega \vec F(\vec u) \cdot \vec \psi_j^k = \int_\Omega \vec f \cdot \vec \psi_j^k\,. \]
+\form#20:\[ \sum_i \sum_\ell u_i^\ell \int_\Omega F^{k\ell}_i (\vec u) \psi_j = \int_\Omega f^k \psi_j\,. \]
+\form#21:$F$
+\form#22:$f$
+\form#23:\[ \sum_i \sum_\ell u_i^\ell \Big(\underbrace{\int_\Omega F^{k\ell}_i(\vec u, \psi_j)}_{A^{k\ell}_{ij}} + \underbrace{\int_{\partial \Omega} G^{k\ell}_i(\vec u, \psi_j)}_{B^{k\ell}_{ij}} \Big) = \underbrace{\int_\Omega f^k(\psi_j)}_{a^k_j} + \underbrace{\int_{\partial \Omega} g^k(\psi_j)}_{b^k_j} \,. \]
+\form#24:$A^{k\ell}_{ij}$
+\form#25:$B^{k\ell}_{ij}$
+\form#26:$a^k_j$
+\form#27:$b^k_j$
+\form#28:\[ \vec G(\vec u) = \vec g\quad \textrm{on }\partial \Omega\,. \]
+\form#29:$i$
+\form#30:\[ \frac{u - u^0}\delta = | \nabla u |_\epsilon \Big( \nabla \cdot \Big(g_f \frac{\nabla u}{| \nabla u |_\epsilon }\Big) + g \nu \Big)\,. \]
+\form#31:$g$
+\form#32:\[ | \nabla u |_\epsilon = \sqrt{|\nabla u| + \epsilon^2}\,. \]
+\form#33:$g_f$
+\form#34:\[ g_f = \exp(- \eta f^2)\,. \]
+\form#35:$\nu$
+\form#36:$\eta$
+\form#37:$\epsilon$
+\form#38:\[ \frac{u - u^0}\delta = | \nabla u | \nabla \cdot (\frac{\nabla u}{| \nabla u |})\,. \]
+\form#39:\[ \nabla\cdot(\nabla u) = f\, , \quad u = v \ \textrm{on}\ \partial \Omega. \]
+\form#40:$v$
+\form#41:\[ - \nabla \cdot (A \nabla u + \vec a u ) + \vec b \cdot \nabla u + c u = f - \nabla \cdot \vec g \quad \textrm{on} \quad \Omega\,. \]
+\form#42:\[ \int_\Omega (A \nabla u + \vec a u ) \nabla \phi + \int_\Omega \vec b \cdot \nabla u \phi + \int_\Omega c u \phi = \int_\Omega f \phi + \int_\Omega \vec g \nabla \phi \,, \]
+\form#43:$\phi$
+\form#44:\[ \int_\Omega (A \nabla u + \vec a u ) \nabla \psi + \int_\Omega \vec b \cdot \nabla u \psi + \int_\Omega c u \psi = \int_\Omega f \psi + \int_\Omega \vec g \nabla \psi \,, \]
+\form#45:$\psi$
+\form#46:\[ \frac{\partial}{\partial \vec n}(A \nabla u + \vec a u) = 0 \quad \textrm{on} \quad \partial \Omega\,. \]
+\form#47:\[ \int_\Omega (A \nabla u + \vec a u ) \nabla \psi + \int_\Omega \vec b \cdot \nabla u \psi + \int_\Omega c u \psi = \int_\Omega f \psi + \int_\Omega \vec g \nabla \psi - \int_{\partial \Omega} v \psi \,, \]
+\form#48:\[ \frac{\partial}{\partial \vec n}(A \nabla u + \vec a u) = v \quad \textrm{on} \quad \partial \Omega\,. \]
+\form#49:\[ \int_{\partial \Omega} \frac{\partial u}{\partial \vec n} \psi = \int_{\partial \Omega} v \psi\,, \]
+\form#50:\[ \frac{\partial u}{\partial \vec n} = v \quad \textrm{on} \quad \partial \Omega\,. \]
+\form#51:\[ \int_{\partial \Omega} u \psi = \int_{\partial \Omega} v \psi\,, \]
+\form#52:\[ u = v \quad \textrm{on} \quad \partial \Omega\,. \]
+\form#53:\[ \int_{\partial \Omega} \frac{\partial u}{\partial \vec n} \psi + \int_{\partial \Omega} h u \psi = \int_{\partial \Omega} v \psi\,, \]
+\form#54:\[ \frac{\partial u}{\partial \vec n} + h u = v \quad \textrm{on} \quad \partial \Omega\,. \]
+\form#55:$b$
+\form#56:$c$
+\form#57:$A$
+\form#58:$h$
+\form#59:\[ \frac{u - u^0}\delta = \nabla \cdot (\frac{\nabla u}{| \nabla u |})\,. \]
+\form#60:\[ \begin{array}{ccc} 3 & - & 2 \\ | & & | \\ 0 & - & 1 \end{array} \]
+\form#61:\[ \begin{array}{ccc} 2 & & \\ | & & \\ 0 & - & 1 \end{array} \quad \textrm{and} \quad \begin{array}{ccc} 1 & - & 0 \\ & & | \\ & & 2 \end{array} \]
+\form#62:$x$
+\form#63:$y$
+\form#64:\[ y = \frac{1}{128} (x - 128) \quad\textrm{and}\quad x = 128 y + 128 \,. \]
+\form#65:\[ \nabla \cdot \vec F = f\,. \]
+\form#66:\[ \vec F_n(x_1, \ldots, x_n, \ldots, x_N) = \frac1N \int_0^{x_n}f(x_1, \ldots, \xi, \ldots, x_N) d\xi\,, \]
+\form#67:$N$
+\form#68:$\textrm{diag}(\sigma_1, \ldots, \sigma_n)$
+\form#69:$V$
+\form#70:\[ A V = V \textrm{diag}(\sigma_1, \ldots, \sigma_n) \]
+\form#71:$R$
+\form#72:\[ A = RR^T \]
+\form#73:\[ A = RR \]
+\form#74:\[ A = R^{-1}R^{-1} \]
+\form#75:$E$
+\form#76:$x_0 \in \mathbf{R}^n$
+\form#77:\[ x_{i+1} = -\tau \nabla E(x_i)\,, \]
+\form#78:$\tau > 0$
+\form#79:$\tau$
+\form#80:\[ I_\beta^{\textrm{SMS}}(\gamma) = \int_{\mathcal{I}(\gamma)}\big(u_1(\gamma) - f\big)^2 d x + \int_{\mathcal{O}(\gamma)} \big(u_2(\gamma) - f\big)^2 d x + \beta |\gamma|_2^2\,, \]
+\form#81:\[ u_1(C) = \frac1{|\mathcal{I}(\gamma)|}\int_{\mathcal{I}(\gamma)}f d x \quad{\textrm{and}} \quad u_2(C) = \frac1{|\mathcal{O}(\gamma)|}\int_{\mathcal{O}(\gamma)}f d x\,. \]
+\form#82:$\mu$
+\form#83:\[ v \mapsto I_\beta^{\textrm{SMS}}\big(\textrm{Exp}_\mu(v)\big)\,. \]
+\form#84:\[ I_\beta^{\textrm{Snakes}}(\gamma) = - \int_\gamma u(\gamma) d \tau + \beta \textrm{Length}(\gamma)\,. \]
+\form#85:\[ u = | \nabla f |\,, \]
+\form#86:\[ v \mapsto I_\beta^{\textrm{Snakes}}\big(\textrm{Exp}_\mu(v)\big)\,. \]
+\form#87:\[ I_\alpha(p) = F(p) + \alpha d_{\mu, \Sigma}(\mu, p)^2 \,. \]
+\form#88:$d_{\mu, \Sigma}$
+\form#89:$\alpha$
+\form#90:$M$
+\form#91:$p$
+\form#92:\[ \textrm{Exp}_p: T_pM \rightarrow M \]
+\form#93:\[ \textrm{Log}_p: M \rightarrow T_pM \]
+\form#94:\[ s(\tau) = \sum_{i = 0}^n a_i b_i(\tau) \]
+\form#95:\[ s(\tau_k) = y_k\,,\quad 0 \leq k \leq N\,. \]
+\form#96:\[ \sum_{i=0}^n a_i \underbrace{\sum_{k=0}^N b_i(\tau_k)b_j(\tau_k)}_{A_{ij}} = \sum_{j=0}^N \underbrace{b_j(\tau_k)}_{B_{jk}} y_k\,,\quad 0 \leq j \leq n\,. \]
+\form#97:$s$
+\form#98:$(\tau_k)_{0\leq k \leq N}$
+\form#99:$B$
