@@ -17,6 +17,12 @@
 *  along with stromx-studio.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#ifndef IMAGE_H
+#define IMAGE_H
+
+#include "ImageInterface.hpp"
+#include <boost/multi_array.hpp>
+
 namespace imaging
 {
   /** \cond */

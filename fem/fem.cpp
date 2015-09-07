@@ -1,5 +1,7 @@
 //Including all neccessary header files
 
+#include <Magick++.h>
+
 #include <core/imaging2.hpp>
 
 #include <image/Image.hpp>
@@ -137,8 +139,9 @@ int main(int argc, char ** argv)
 {
   typedef img::float_t float_t;
 
-  try
+try
   {
+	Magick::InitializeMagick(*argv);
     OpenGlViewer::out.init(argc, argv, ublas::fixed_vector<float_t, 2> (0.0, 0.0),
     ublas::fixed_vector<float_t, 2>(100.0, 150.0), 400, 600);
 

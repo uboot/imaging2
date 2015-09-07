@@ -3,6 +3,8 @@ add_executable(polytope
 )
                 
 target_link_libraries(polytope
+  GL
+  GLU
   glut
   pthread
   xml2 
