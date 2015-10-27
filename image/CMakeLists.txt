@@ -5,6 +5,9 @@ add_executable(image
 target_link_libraries(image
   imaging2
   lapack
+  pthread
+  GL
+  GLU
   glut
   Magick++
 )

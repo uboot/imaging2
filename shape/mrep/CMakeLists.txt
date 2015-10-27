@@ -3,6 +3,8 @@ add_executable(mrep
 )
                 
 target_link_libraries(mrep
+  GL
+  GLU
   glut
   pthread
   png 

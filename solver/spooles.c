@@ -1,8 +1,8 @@
-#include <misc.h>
-#include <FrontMtx.h>
-#include <SymbFac.h>
-#include <Iter/Iter.h>
-#include <Graph.h>
+#include <spooles/misc.h>
+#include <spooles/FrontMtx.h>
+#include <spooles/SymbFac.h>
+#include <spooles/Iter/Iter.h>
+#include <spooles/Graph.h>
 
 #include <string.h>
 

@@ -4,9 +4,13 @@ add_executable(fem
 
 target_link_libraries(fem
   imaging2
+  pthread
   lapack
+  GL
+  GLU
   glut
-  Magick++
+  GraphicsMagick
+  GraphicsMagick++
 )
 
 include_directories(${CMAKE_SOURCE_DIR})
